@@ -8,8 +8,11 @@ yt2wm youtube.com/[video url] [name]
 
 where [video url] is the unique part of the youtube url
 and [name] is any name you want for the files, they will be outputted like this:
+
 name01.mp3 (15 minute chunk)
+
 name02.mp3 (15 minute chunk)
+
 ...etc 					    new folder unique to the name
 					      V
 The files will come out in Documents/Walkman/name/name01.mp3
