@@ -13,8 +13,8 @@ name01.mp3 (15 minute chunk)
 
 name02.mp3 (15 minute chunk)
 
-...etc 					    new folder unique to the name
-					      V
+...etc 		
+	
 The files will come out in Documents/Walkman/name/name01.mp3
 
 Uses youtube-dl, ffmpeg and mp3splt. All work in those programs belongs to their creators and I do not claim any part of it.
