@@ -1,0 +1,40 @@
+#!/bin/sh
+rm /tmp/yt-dltmp.*
+if [ $? != 0 ];
+then
+	echo something went wrong with remove
+	exit $?
+else
+	echo downloading file from youtube
+fi
+youtube-dl -x -q -o "/tmp/yt-dltmp.%(ext)s" "$1"
+if [ $? != 0 ];
+then
+	echo something went wrong with youtube-dl
+	exit $?
+fi
+rm /tmp/fftmp.mp3
+if [ $? != 0 ];
+then
+	echo something went wrong with remove
+	exit $?
+else
+	echo converting file to mp3
+fi
+ffmpeg -hide_banner -loglevel error -y -i /tmp/yt-dltmp.* /tmp/fftmp.mp3
+if [ $? != 0 ];
+then
+	echo something went wrong with ffmpeg
+	exit $?
+else
+	echo splitting file into 15 minute chunks
+fi
+mp3splt -Q -t 15.0 -d ~/Documents/Walkman/$2/ -o $2@n /tmp/fftmp.mp3
+if [ $? != 0 ];
+then
+	echo something went wrong with mp3splt
+	exit $?
+fi
+echo Done and saved to /Documents/Walkman/$2+n.mp3
+exit 0
+
