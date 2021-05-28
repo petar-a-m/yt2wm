@@ -1,5 +1,5 @@
 #!/bin/sh
-rm /tmp/yt-dltmp.*
+rm -f /tmp/yt-dltmp.*
 if [ $? != 0 ];
 then
 	echo something went wrong with remove
@@ -13,7 +13,7 @@ then
 	echo something went wrong with youtube-dl
 	exit $?
 fi
-rm /tmp/fftmp.mp3
+rm -f /tmp/fftmp.mp3
 if [ $? != 0 ];
 then
 	echo something went wrong with remove
